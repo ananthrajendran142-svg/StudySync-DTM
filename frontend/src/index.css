@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-app: #f1f5f9;
+  --bg-header: #0f172a;
+  --primary-blue: #3b82f6;
+  --primary-indigo: #4f46e5;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  min-h: 100vh;
+}
+
+/* StudySync Light Card Styling (matching reference image) */
+@layer components {
+  .studysync-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    border-radius: 20px;
+  }
+}
+
+.studysync-card-dark {
+  background: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  color: #f8fafc;
+}
+
+/* Header Top Bar */
+.studysync-header {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Primary Button Styling */
+.btn-primary-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-primary-blue:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+}
+
+/* Circular Top Nav Buttons */
+.top-nav-circle {
+  width: 44 h-44;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.top-nav-circle:hover {
+  background: rgba(59, 130, 246, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
