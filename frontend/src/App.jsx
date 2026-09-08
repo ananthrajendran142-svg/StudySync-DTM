@@ -33,7 +33,11 @@ export default function App() {
 
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem('studysync_tasks');
-    return saved ? JSON.parse(saved) : [];
+    return saved ? JSON.parse(saved) : [
+      { id: 1, title: 'Mathematics - Chapter 4 Differentiation', subject: 'Mathematics', priority: 'High', deadlineTime: '10:00 AM', estimatedPomodoros: 2, completed: false, day: 1 },
+      { id: 2, title: 'Physics - Mechanics Problem Set', subject: 'Physics', priority: 'Medium', deadlineTime: '02:00 PM', estimatedPomodoros: 3, completed: false, day: 1 },
+      { id: 3, title: 'Computer Science - Data Structures Review', subject: 'CS', priority: 'High', deadlineTime: '05:00 PM', estimatedPomodoros: 2, completed: true, day: 1 }
+    ];
   });
 
   const [groupSessions, setGroupSessions] = useState(() => {
@@ -44,10 +48,10 @@ export default function App() {
     ];
   });
 
-  const [streak, setStreak] = useState(() => Number(localStorage.getItem('studysync_streak')) || 1);
-  const [points, setPoints] = useState(() => Number(localStorage.getItem('studysync_points')) || 0);
-  const [totalFocusMins, setTotalFocusMins] = useState(() => Number(localStorage.getItem('studysync_mins')) || 0);
-  const [focusSessionsCount, setFocusSessionsCount] = useState(() => Number(localStorage.getItem('studysync_sessions')) || 0);
+  const [streak, setStreak] = useState(() => Number(localStorage.getItem('studysync_streak')) || 3);
+  const [points, setPoints] = useState(() => Number(localStorage.getItem('studysync_points')) || 150);
+  const [totalFocusMins, setTotalFocusMins] = useState(() => Number(localStorage.getItem('studysync_mins')) || 45);
+  const [focusSessionsCount, setFocusSessionsCount] = useState(() => Number(localStorage.getItem('studysync_sessions')) || 2);
   const [isProctorActive, setIsProctorActive] = useState(false);
   const [currentTask, setCurrentTask] = useState(null);
 
